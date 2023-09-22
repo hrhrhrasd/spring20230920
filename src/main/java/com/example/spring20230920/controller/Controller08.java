@@ -10,13 +10,20 @@ public class Controller08 {
 
     @RequestMapping("/sub1")
     public void method1(Model model) {
-        model.addAttribute("attr1","value1");
-        model.addAttribute("attr2","value2");
+        model.addAttribute("attr1", "value1");
+        model.addAttribute("attr2", "value2");
     }
 
     @RequestMapping("/sub2")
     public void method2(Model model) {
-        model.addAttribute("propone","😊");
-        model.addAttribute("propTWO","😂");
+        model.addAttribute("propone", "😊");
+        model.addAttribute("propTWO", "😂");
+    }
+
+    @RequestMapping("/sub3")
+    public void method(Model model) {
+        model.addAttribute("myName", "h");
+        model.addAttribute("yourAddress", "seoul");
+        model.addAttribute("herEmail", "asd@zxc.qwe");
     }
 }
