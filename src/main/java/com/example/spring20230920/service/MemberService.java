@@ -14,7 +14,8 @@ public class MemberService {
     private final MemberRepository memberRepository = new MemoryMemberRepository();
 
 
-    private Long join(Member member) {
+
+    public Long join(Member member) {
         //같은 이름 중복회원 불가
         memberRepository.findByName(member.getName())
                 .ifPresent(m-> {
@@ -31,11 +32,11 @@ public class MemberService {
     }
 
 
-    private List<Member> findMembers() {
+    public List<Member> findMembers() {
         return memberRepository.findall();
     }
 
-    private Optional<Member> findOne(Long memberId) {
+    public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
 }
