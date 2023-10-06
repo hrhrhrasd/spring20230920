@@ -199,10 +199,6 @@ public class Controller20 {
     }
 
 
-
-
-
-
     @GetMapping("/sub9")
     public void method9(@RequestParam("country") List<String> countryList) throws SQLException {
         String que = "";
@@ -275,10 +271,10 @@ public class Controller20 {
         Connection connection = dataSource.getConnection();
         PreparedStatement statement = connection.prepareStatement(sql);
         for (int i = 0; i < countryList.size(); i++) {
-            statement.setString(i+1, countryList.get(i));
+            statement.setString(i + 1, countryList.get(i));
         }
         ResultSet resultSet = statement.executeQuery();
-        try (connection; statement; resultSet){
+        try (connection; statement; resultSet) {
             while (resultSet.next()) {
                 System.out.print(resultSet.getString(7));
                 System.out.print(", ");
@@ -287,7 +283,9 @@ public class Controller20 {
 
         }
 
-
     }
 
+    @GetMapping("/sub12")
+    public void method12() {
+    }
 }
