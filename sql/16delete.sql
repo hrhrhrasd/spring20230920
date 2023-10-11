@@ -17,3 +17,6 @@ delete from employees where EmployeeID >= 10;
 select * from products;
 select * from products where ProductID >= 80;
 delete from products where ProductID >= 80;
+
+select * from customers;
+select * from products;
