@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
@@ -83,5 +84,57 @@ public class Controller30 {
         System.out.println(row + "행이 입력됨");
         rttr.addFlashAttribute("row", row);
         return "redirect:/main30/sub9";
+    }
+
+    @GetMapping("sub11")
+    public void method11(Integer id) {
+        int rows = dao4.delete1(id);
+        System.out.println(rows + "개의 행 지워짐");
+    }
+
+    @GetMapping("sub12")
+    public void method12(Integer pid) {
+        int rows = dao4.delete2(pid);
+        System.out.println(rows + "개의 행 지워짐");
+    }
+
+    @GetMapping("sub13")
+    public void method13(Integer id, Model model) {
+        //직원 조회
+        MyDto33 employee = dao4.select8(id);
+        model.addAttribute("employee", employee);
+    }
+
+    @PostMapping("sub14")
+    public String method14(MyDto33 employee, RedirectAttributes rttr) {
+        // 직원 수정
+        int rows = dao4.update1(employee);
+
+        if (rows == 1) {
+            rttr.addFlashAttribute("msg", "수정완료");
+        } else {
+            rttr.addFlashAttribute("msg", "수정실패");
+        }
+        rttr.addAttribute("id", employee.getId());
+        return "redirect:/main30/sub13";
+    }
+
+    @GetMapping("/sub15")
+    public void method15(Integer id, Model model) {
+        MyDto34 customers = dao4.select9(id);
+        model.addAttribute("customers", customers);
+    }
+
+    @PostMapping("/sub16")
+    public String method16(MyDto34 customers, RedirectAttributes rttr) {
+        int rows = dao4.update2(customers);
+
+        if (rows == 1) {
+            rttr.addFlashAttribute("msg", "수정완료");
+        } else {
+            rttr.addFlashAttribute("msg", "수정실패");
+        }
+        rttr.addAttribute("id", customers.getCustomerID());
+        return "redirect:/main30/sub15";
     }
 }
