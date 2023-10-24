@@ -107,6 +107,11 @@
         <button onclick="ajax12()">button12</button>
     </div>
 </div>
+<div>
+    <div>
+        <button onclick="ajax13()">button13</button>
+    </div>
+</div>
 
 
 <script>
@@ -236,6 +241,14 @@
             name: document.querySelector("#input15").value,
             files: document.querySelector("#input16").files
         });
+    }
+
+    function ajax13() {
+        // axios.request({
+        //     url: "/main35/sub11",
+        //     method: "get"
+        // });
+        axios.get("main35/sub11");
     }
 </script>
 </body>
