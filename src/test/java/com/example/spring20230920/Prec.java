@@ -1,21 +1,15 @@
 package com.example.spring20230920;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Prec {
     public static void main(String[] args) {
-        String[] callings = {"", ""};
-        String[] players = {"", ""};
-        List<String> list = Arrays.asList(players);
-
-        for (String call : callings) {
-            int index = list.indexOf(call);
-            String temp = list.get(index-1);
-            list.set(index-1, call);
-            list.set(index, temp);
-        }
-        list.toArray(new String[0]);
+        int[] arr = new int[] {1,2,4};
+        System.out.println(arr.length);
+        int x = 0;
+        int y = 0;
+        Map<int[], String> map = new HashMap<>();
+        map.put(new int[]{x, y}, "asd");
+        Character a = 'a';
     }
 }

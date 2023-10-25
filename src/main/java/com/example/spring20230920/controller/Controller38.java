@@ -40,7 +40,7 @@ public class Controller38 {
     @ResponseBody
     public String method2() throws InterruptedException {
 
-        Thread.sleep(5000);
+        Thread.sleep(1000);
 
         return "hello world!";
     }
