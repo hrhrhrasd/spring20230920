@@ -10,6 +10,5 @@ public class Prec {
         int y = 0;
         Map<int[], String> map = new HashMap<>();
         map.put(new int[]{x, y}, "asd");
-        Character a = 'a';
     }
 }
