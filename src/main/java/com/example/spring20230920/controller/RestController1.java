@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/api/main1")
@@ -40,7 +42,7 @@ public class RestController1 {
     public ResponseEntity<MyDto34> method4(int id) {
         MyDto34 customer = dao.getCustomerById(id);
 
-        if ( customer == null) {
+        if (customer == null) {
             return ResponseEntity.notFound().build();
         }
 
@@ -52,10 +54,16 @@ public class RestController1 {
     public ResponseEntity<String> method5(int id) {
         String employee = dao.getEmployeeById(id);
 
-        if ( employee == null) {
+        if (employee == null) {
             return ResponseEntity.notFound().build();
         }
 
         return ResponseEntity.ok(employee);
+    }
+
+    @GetMapping("/sub6")
+    @ResponseBody
+    public List<Integer> method6() {
+        return dao.getCustomerIdList();
     }
 }

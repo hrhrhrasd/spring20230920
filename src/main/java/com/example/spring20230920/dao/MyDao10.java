@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface MyDao10 {
 
@@ -25,4 +27,11 @@ public interface MyDao10 {
         where EmployeeID = #{id}
 """)
     String getEmployeeById(int id);
+
+    @Select("""
+        select CustomerID from customers
+        order by CustomerID
+""")
+    List<Integer> getCustomerIdList();
+
 }
