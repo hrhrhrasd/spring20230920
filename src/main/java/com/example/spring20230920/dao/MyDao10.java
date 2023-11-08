@@ -19,4 +19,10 @@ public interface MyDao10 {
         where CustomerID = #{i}
 """)
     MyDto34 getCustomerById(int i);
+
+    @Select("""
+        select LastName from employees
+        where EmployeeID = #{id}
+""")
+    String getEmployeeById(int id);
 }

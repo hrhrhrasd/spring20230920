@@ -46,4 +46,16 @@ public class RestController1 {
 
         return ResponseEntity.ok(customer);
     }
+
+    @GetMapping("/sub5")
+    @ResponseBody
+    public ResponseEntity<String> method5(int id) {
+        String employee = dao.getEmployeeById(id);
+
+        if ( employee == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(employee);
+    }
 }
